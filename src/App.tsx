@@ -6,6 +6,9 @@ import PostsPage from "./pages/PostsPage";
 import PostDetailsPage from "./pages/PostDetailsPage";
 import UsersPage from "./pages/UsersPage";
 import NotFoundPage from "./pages/NotFoundPage";
+import CreatePostPage from "./pages/CreatePostPage";
+import EditPostPage from "./pages/EditPostPage";
+import DeletePostPage from "./pages/DeletePostPage";
 
 function App() {
   return (
@@ -13,18 +16,45 @@ function App() {
       <Navbar />
 
       <Routes>
-        <Route path="/" element={<HomePage />} />
+        <Route
+          path="/"
+          element={<HomePage />}
+        />
 
-        <Route path="/posts" element={<PostsPage />} />
+        <Route
+          path="/posts"
+          element={<PostsPage />}
+        />
+
+        <Route
+          path="/posts/create"
+          element={<CreatePostPage />}
+        />
 
         <Route
           path="/posts/:id"
           element={<PostDetailsPage />}
         />
 
-        <Route path="/users" element={<UsersPage />} />
+        <Route
+          path="/posts/:id/edit"
+          element={<EditPostPage />}
+        />
 
-        <Route path="*" element={<NotFoundPage />} />
+        <Route
+          path="/posts/:id/delete"
+          element={<DeletePostPage />}
+        />
+
+        <Route
+          path="/users"
+          element={<UsersPage />}
+        />
+
+        <Route
+          path="*"
+          element={<NotFoundPage />}
+        />
       </Routes>
     </div>
   );
